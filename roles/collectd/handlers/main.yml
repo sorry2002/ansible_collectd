@@ -1,0 +1,7 @@
+---
+
+- name: Restart Collectd
+  systemd:
+    name: collectd
+    state: restarted
+    enabled: yes

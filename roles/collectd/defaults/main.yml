@@ -1,0 +1,14 @@
+---
+
+collectd_version_master: "5.8"
+collectd_version: "{{ collectd_version_master }}.0.*"
+collectd_apt_key_id: 3994D24FB8543576
+collectd_apt_key_server: keys.gnupg.net
+collectd_apt_url: "deb http://pkg.ci.collectd.org/deb {{ ansible_lsb.codename }} collectd-{{ collectd_version_master }}"
+
+collectd_FQDNLookup: false
+collectd_AutoLoadPlugin: true
+collectd_Interval: 60
+collectd_Timeout: 2
+collectd_ReadThreads: 5
+collectd_WriteThreads: 5

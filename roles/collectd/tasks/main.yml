@@ -1,0 +1,28 @@
+---
+
+- name: Import Collectd key on remote server
+  apt_key:
+    id: "{{ collectd_apt_key_id }}"
+    keyserver: "{{ collectd_apt_key_server }}"
+    state: present
+
+- name: Add Collectd repository on remote server
+  apt_repository:
+    repo: "{{ collectd_apt_url }}"
+    state: present
+
+- name: Install required packages on remote server
+  apt:
+    name: "collectd={{ collectd_version }}"
+    update_cache: yes
+    state: present
+  notify: Restart Collectd
+
+- name: Configure Collectd
+  template:
+    src: "etc/collectd/collectd.conf.j2"
+    dest: "/etc/collectd/collectd.conf"
+    owner: root
+    group: root
+    mode: 0644
+  notify: Restart Collectd
