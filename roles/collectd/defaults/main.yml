@@ -1,11 +1,18 @@
 ---
 
-collectd_version_master: "5.8"
-collectd_version: "{{ collectd_version_master }}.0.*"
+###
+# COLLECTD
+###
+
+# Version
+collectd_version: "5.7.2"
+
+# Debien
 collectd_apt_key_id: 3994D24FB8543576
 collectd_apt_key_server: keys.gnupg.net
 collectd_apt_url: "deb http://pkg.ci.collectd.org/deb {{ ansible_lsb.codename }} collectd-{{ collectd_version_master }}"
 
+# Configuration
 collectd_FQDNLookup: false
 collectd_AutoLoadPlugin: true
 collectd_Interval: 60
