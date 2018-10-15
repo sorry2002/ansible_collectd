@@ -5,7 +5,7 @@
 ###
 
 # Version
-collectd_version: "5.7.2"
+collectd_version: "5.7.2" # Or : 5.8.O for RedHat OS
 
 # Debien
 collectd_apt_key_id: 3994D24FB8543576
